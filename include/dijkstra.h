@@ -65,6 +65,6 @@ inline void dijkstra(Map& graph, int start) {
     }
 
     std::cout << std::endl;
-    std::cout << "After dijkstra, node " << start << " shortest distance to other node is:\n";
+    std::cout << "After dijkstra, node " << start << " shortest distance to others node is:\n";
     print(distance);
 }
