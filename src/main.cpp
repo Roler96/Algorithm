@@ -1,33 +1,33 @@
-#include "floyd.h"
-#include "dijkstra.h"
+#include "sort/bubble.h"
 
-void tryFloyd() {
-    static std::vector<std::vector<int>> graph = {
-        {0, INF, 10, INF, 30, 100},
-        {INF, 0, 5, INF, INF, INF},
-        {INF, INF, 0, 50, INF, INF},
-        {INF, INF, INF, 0, INF, 10},
-        {INF, INF, INF, INF, 0, 60},
-        {INF, INF, INF, INF, INF, 0}
-    };
-    floyd(graph);
-}
+#include "path/floyd.h"
+#include "path/dijkstra.h"
 
-void tryDijkstra() {
-    static std::vector<std::vector<int>> graph = {
-        {0,   10,  INF, 4,   INF, INF},
-        {10,  0,   8,   2,   6,   INF},
-        {INF, 8,   0,   15,  1,   5},
-        {4,   2,   15,  0,   6,   INF},
-        {INF, 6,   1,   6,   0,   12},
-        {INF, INF, 5,   INF, 12,  0}
-    };
-    int start = 0;
-    dijkstra(graph, start);
-}
+enum TryAlgorithm {
+    SORT_BUBBLE,
+    SORT_SELECT,
+    SORT_QUICK,
+    SORT_MERGE,
+    SORT_SHELL,
+    SORT_INSERT,
+    SORT_HEAP,
+    
+    PATH_FLOYD,
+    PATH_DIJKSTRA,
+};
 
 int main(int argc, char *argv[])
 {
-    tryDijkstra();
+    switch(TryAlgorithm::SORT_BUBBLE) {
+    case SORT_BUBBLE:
+        tryBubbleSort();
+        break;
+    case PATH_FLOYD:
+        tryFloyd();
+        break;
+    case PATH_DIJKSTRA:
+        tryDijkstra();
+        break;
+    }
     return 0;
 }

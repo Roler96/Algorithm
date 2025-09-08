@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <algorithm>
 #include "common.h"
@@ -67,4 +67,17 @@ inline void dijkstra(Map& graph, int start) {
     std::cout << std::endl;
     std::cout << "After dijkstra, node " << start << " shortest distance to others node is:\n";
     print(distance);
+}
+
+inline void tryDijkstra() {
+    static std::vector<std::vector<int>> graph = {
+        {0,   10,  INF, 4,   INF, INF},
+        {10,  0,   8,   2,   6,   INF},
+        {INF, 8,   0,   15,  1,   5},
+        {4,   2,   15,  0,   6,   INF},
+        {INF, 6,   1,   6,   0,   12},
+        {INF, INF, 5,   INF, 12,  0}
+    };
+    int start = 0;
+    dijkstra(graph, start);
 }

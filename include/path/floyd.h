@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <algorithm>
 
@@ -28,4 +28,16 @@ inline void floyd(Map& graph) {
         std::cout << "After round " << i + 1 << ": " << std::endl;
         print(graph);
     }
+}
+
+inline void tryFloyd() {
+    static std::vector<std::vector<int>> graph = {
+        {0, INF, 10, INF, 30, 100},
+        {INF, 0, 5, INF, INF, INF},
+        {INF, INF, 0, 50, INF, INF},
+        {INF, INF, INF, 0, INF, 10},
+        {INF, INF, INF, INF, 0, 60},
+        {INF, INF, INF, INF, INF, 0}
+    };
+    floyd(graph);
 }
