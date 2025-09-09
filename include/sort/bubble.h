@@ -29,7 +29,7 @@ inline void tryBubbleSort() {
 
     bubbleSort(vec);
 
-    std::cout << "After bubble sort, vec is:\n";
+    std::cout << "After Bubble Sort, vec is:\n";
     print(vec);
     std::cout << std::endl;
 }
