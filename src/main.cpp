@@ -1,5 +1,6 @@
 #include "sort/bubble.h"
 #include "sort/select.h"
+#include "sort/insert.h"
 
 #include "path/floyd.h"
 #include "path/dijkstra.h"
@@ -19,12 +20,15 @@ enum TryAlgorithm {
 
 int main(int argc, char *argv[])
 {
-    switch(TryAlgorithm::SORT_SELECT) {
+    switch(TryAlgorithm::SORT_INSERT) {
     case SORT_BUBBLE:
         tryBubbleSort();
         break;
     case SORT_SELECT:
         trySelectSort();
+        break;
+    case SORT_INSERT:
+        tryInsertSort();
         break;
     case PATH_FLOYD:
         tryFloyd();
