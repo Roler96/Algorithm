@@ -7,10 +7,10 @@ void bubbleSort(std::vector<T> &vec)
 {
     size_t round = 1;
     for (size_t i = 0; i < vec.size() - 1; i++) {
-        for (size_t j = i + 1; j < vec.size(); j++) {
-            if (vec[i] > vec[j]) {
-                T t = vec[i];
-                vec[i] = vec[j];
+        for (size_t j = 0; j < vec.size() - 1 - i; j++) {
+            if (vec[j] > vec[j + 1]) {
+                T t = vec[j + 1];
+                vec[j + 1] = vec[j];
                 vec[j] = t;
             }
         }
