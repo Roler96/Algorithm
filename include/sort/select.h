@@ -18,7 +18,7 @@ void selectSort(std::vector<T> &vec)
             vec[i] = vec[index];
             vec[index] = tmp;
         }
-        std::cout << "After round " << round++ << std::endl;
+        std::cout << "After round " << round++ << ": ";
         print(vec);
         std::cout << std::endl;
     }

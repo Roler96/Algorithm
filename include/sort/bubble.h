@@ -14,7 +14,7 @@ void bubbleSort(std::vector<T> &vec)
                 vec[j] = t;
             }
         }
-        std::cout << "After round " << round++ << std::endl;
+        std::cout << "After round " << round++ << ": ";
         print(vec);
         std::cout << std::endl;
     }

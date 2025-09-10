@@ -5,37 +5,17 @@
 #include "path/floyd.h"
 #include "path/dijkstra.h"
 
-enum TryAlgorithm {
-    SORT_BUBBLE,
-    SORT_SELECT,
-    SORT_QUICK,
-    SORT_MERGE,
-    SORT_SHELL,
-    SORT_INSERT,
-    SORT_HEAP,
-    
-    PATH_FLOYD,
-    PATH_DIJKSTRA,
-};
+#define TRY(desc, func)         \
+std::cout << desc << std::endl; \
+func();                         \
+std::cout << std::endl;         \
 
 int main(int argc, char *argv[])
 {
-    switch(TryAlgorithm::SORT_INSERT) {
-    case SORT_BUBBLE:
-        tryBubbleSort();
-        break;
-    case SORT_SELECT:
-        trySelectSort();
-        break;
-    case SORT_INSERT:
-        tryInsertSort();
-        break;
-    case PATH_FLOYD:
-        tryFloyd();
-        break;
-    case PATH_DIJKSTRA:
-        tryDijkstra();
-        break;
-    }
+    TRY("Bubble Sort", tryBubbleSort);
+    TRY("Select Sort", trySelectSort);
+    TRY("Insert Sort", tryInsertSort);
+    TRY("Floyd", tryFloyd);
+    TRY("Dijkstra", tryDijkstra);
     return 0;
 }
