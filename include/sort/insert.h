@@ -34,15 +34,13 @@ void insertSort(std::vector<T> &vec)
 {
     size_t round = 1;
     for (size_t i = 1; i < vec.size(); i++) {
-        for (size_t j = i; j > 0 ; j--) {
-            if (vec[j - 1] > vec[j]) {
-                T tmp = vec[j];
-                vec[j] = vec[j - 1];
-                vec[j - 1] = tmp;
-            } else {
-                break;
-            }
+        T tmp = vec[i];
+        size_t j = i;
+        while(j > 0 && vec[j - 1] > tmp) {
+            vec[j] = vec[j - 1];
+            j--;
         }
+        vec[j] = tmp;
 
         std::cout << "After round " << round++ << ": ";
         print(vec);
