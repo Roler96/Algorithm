@@ -6,7 +6,9 @@ template<typename T>
 void bubbleSort(std::vector<T> &vec)
 {
     size_t round = 1;
+    // 每次循环会将最大的值交换到末尾
     for (size_t i = 0; i < vec.size() - 1; i++) {
+        // 从vec.size() - 1 - i往后都是有序的了
         for (size_t j = 0; j < vec.size() - 1 - i; j++) {
             if (vec[j] > vec[j + 1]) {
                 T t = vec[j + 1];
